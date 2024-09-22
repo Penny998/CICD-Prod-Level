@@ -3,17 +3,17 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
+        <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.6.6</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.crni99</groupId>
-	<artifactId>bookstore</artifactId>
+        <artifactId>webapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Book Store</name>
-	<description>Java Spring MVC Hibernate</description>
+	<packaging>war</packaging>
+	<name>Webapp</name>
+	<description>Webapp</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -55,11 +55,7 @@
 		</dependency>
 
 		<!-- H2 DB AND C3POOL -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+		
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
