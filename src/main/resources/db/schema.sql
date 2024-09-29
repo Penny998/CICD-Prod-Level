@@ -46,10 +46,9 @@ CREATE TABLE IF NOT EXISTS orders (
 );
 
 INSERT INTO users (username, password, enabled) 
-VALUES ('admin', 'admin', 1)
-ON DUPLICATE KEY UPDATE password=VALUES(password), enabled=VALUES(enabled);
+	VALUES ('admin', '{noop}admin', 1);
+	
 
 
 INSERT INTO authorities (username, authority) 
-VALUES ('admin', 'ADMIN')
-ON DUPLICATE KEY UPDATE authority=VALUES(authority);
+	VALUES ('admin', 'ADMIN');
