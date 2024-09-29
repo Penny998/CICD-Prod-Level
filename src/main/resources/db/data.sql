@@ -37,11 +37,10 @@ CREATE TABLE IF NOT EXISTS authorities (
 );
 
 
-
-INSERT INTO USERS (username, password, enabled) 
+INSERT INTO users (username, password, enabled) 
 	VALUES ('admin', '{noop}admin', 1);
 	
 
 
-INSERT INTO AUTHORITIES (username, authority) 
+INSERT INTO authorities (username, authority) 
 	VALUES ('admin', 'ADMIN');
