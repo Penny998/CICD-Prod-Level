@@ -1,0 +1,24 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bookstore
+    ports:
+      - "3306:3306"
+    networks:
+      - springboot-mysql-network
+
+  springboot-app:
+    image: app
+    container_name: app
+    ports:
+      - "8080:8080"
+    depends_on:
+            - mysql
+    networks:
+      - springboot-mysql-network
+networks:
+  springboot-mysql-network:
+   driver: bridge
