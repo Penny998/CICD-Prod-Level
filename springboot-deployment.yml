@@ -19,7 +19,7 @@ spec:
         - containerPort: 8080
         env:
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:mysql-service://mysql-service:3306/bookstore  # Corrected URL format
+          value: jdbc:mysql://10.105.43.142:3306/bookstore  # Corrected URL format
         - name: SPRING_DATASOURCE_USERNAME
           value: root
         - name: SPRING_DATASOURCE_PASSWORD
