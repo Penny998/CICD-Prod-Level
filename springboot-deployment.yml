@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: app:latest 
+        image: penny998/springboot:03   # Updated image name
         ports:
         - containerPort: 8080
         env:
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:mysql-container://mysql-service:3306/bookstore
+          value: jdbc:mysql-container://mysql-service:3306/bookstore  # Corrected URL format
         - name: SPRING_DATASOURCE_USERNAME
           value: root
         - name: SPRING_DATASOURCE_PASSWORD
