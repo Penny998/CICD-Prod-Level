@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   name: springboot-deployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: springboot
-  replicas: 1
   template:
     metadata:
       labels:
@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: springboot
-        image: penny998/springboot:03   # Updated image name
+        image: penny998/springboot:03  # Ensure the image is accessible
         ports:
         - containerPort: 8080
         env:
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:mysql://10.105.43.142:3306/bookstore  # Corrected URL format
+          value: jdbc:mysql://mysql-service:3306/bookstore?createDatabaseIfNotExist=true
         - name: SPRING_DATASOURCE_USERNAME
           value: root
         - name: SPRING_DATASOURCE_PASSWORD
